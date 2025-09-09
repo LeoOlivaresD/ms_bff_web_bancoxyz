@@ -16,7 +16,7 @@ import com.duoc.bff_web_bancoxyz.service.BffServiceWeb;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/bff-web")
+@RequestMapping("/bff_web")
 public class BffRestControllerWeb {
     @Autowired
     private BffServiceWeb bffServiceWeb;
