@@ -8,26 +8,33 @@ import org.springframework.stereotype.Service;
 import com.duoc.bff_web_bancoxyz.dtos.DtoCuentaAnual;
 import com.duoc.bff_web_bancoxyz.dtos.DtoInteres;
 import com.duoc.bff_web_bancoxyz.dtos.DtoTransaccion;
-import com.duoc.bff_web_bancoxyz.restclient.RestClientBancoXyzWeb;
+import com.duoc.bff_web_bancoxyz.restclient.CuentaAnualRestClient;
+import com.duoc.bff_web_bancoxyz.restclient.InteresRestClient;
+import com.duoc.bff_web_bancoxyz.restclient.TransaccionRestClient;
 
 @Service
 public class BffServiceWeb {
     @Autowired
-    private RestClientBancoXyzWeb restClientBancoXyzWeb;
+    private CuentaAnualRestClient cuentaAnualRestClient;
+    private InteresRestClient interesRestClient;
+    private TransaccionRestClient transaccionRestClient;
 
-    public BffServiceWeb(RestClientBancoXyzWeb restClientBancoXyzWeb) {
-        this.restClientBancoXyzWeb = restClientBancoXyzWeb;
+    public BffServiceWeb(CuentaAnualRestClient cuentaAnualRestClient, InteresRestClient interesRestClient,
+            TransaccionRestClient transaccionRestClient) {
+        this.cuentaAnualRestClient = cuentaAnualRestClient;
+        this.interesRestClient = interesRestClient;
+        this.transaccionRestClient = transaccionRestClient;
     }
 
     public List<DtoInteres> verInteresesAplicados() {
-        return restClientBancoXyzWeb.listarIntereses();
+        return interesRestClient.listarIntereses();
     }
 
     public List<DtoCuentaAnual> verCuentasAnuales() {
-        return restClientBancoXyzWeb.listarCuentasAnuales();
+        return cuentaAnualRestClient.listarCuentasAnuales();
     }
 
     public List<DtoTransaccion> verTransacciones() {
-        return restClientBancoXyzWeb.listarTransacciones();
+        return transaccionRestClient.listarTransacciones();
     }
 }
