@@ -17,7 +17,7 @@ Backend for Frontend (BFF) para clientes web. Se conecta a microservicios median
 - Spring Security  
 - HTTPS (keystore.p12)  
 - Maven
-- Openfeign
+- OpenFeign
 
 **Seguridad:**  
 - Autenticación HTTP Basic (`user` / `password`)  
