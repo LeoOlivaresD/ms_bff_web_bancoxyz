@@ -4,7 +4,7 @@ Este repositorio forma parte de una arquitectura distribuida compuesta por micro
 
 ---
 
-### ✅ `ms_bff_web_bancoxyz`
+### ✅ `bff_web_bancoxyz`
 
 ```markdown
 # 📁 ms_bff_web_bancoxyz
