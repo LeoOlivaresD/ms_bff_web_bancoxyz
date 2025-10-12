@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.duoc.bff_web_bancoxyz.dtos.DtoInteres;
 
-@FeignClient(name = "ms-interes-bancoxyz", url = "http://localhost:8083/banco/api")
+@FeignClient(name = "ms-interes-bancoxyz")
 public interface InteresRestClient {
-    @GetMapping("/intereses")
+    @GetMapping("/banco/api/intereses")
     List<DtoInteres> listarIntereses();
 }
